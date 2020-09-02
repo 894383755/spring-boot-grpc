@@ -2,7 +2,7 @@ spring:
   application:
     name: spring-boot-grpc-server
 server:
-  port: 10000
+  port: 8081
 grpc:
   server:
     port: 0
@@ -13,4 +13,6 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://192.168.148.32:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+      #defaultZone: http://localhost:${server.port}/eureka/
+
