@@ -21,6 +21,7 @@
 		<module>spring-boot-grpc-common</module>
 		<module>spring-boot-grpc-server</module>
         <module>spring-boot-grpc-client</module>
+		<module>spring-boot-grpc-centre</module>
 	</modules>
 
 	<properties>
@@ -39,15 +40,6 @@
 			<scope>test</scope>
 		</dependency>
 
-<!--		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>-->
-
-<!--		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-		</dependency>-->
 	</dependencies>
 
 	<build>
