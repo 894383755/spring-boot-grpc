@@ -1,6 +1,10 @@
 spring:
   application:
     name: spring-boot-grpc-server
+  security:
+    user:
+      name: admin
+      password: admin
 server:
   port: 8081
 grpc:
