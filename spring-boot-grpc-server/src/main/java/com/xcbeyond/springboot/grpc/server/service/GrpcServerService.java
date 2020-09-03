@@ -5,6 +5,7 @@ import com.xcbeyond.springboot.grpc.lib.HelloRequest;
 import com.xcbeyond.springboot.grpc.lib.SimpleGrpc;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
+import org.springframework.security.access.annotation.Secured;
 
 /**
  * @Auther: xcbeyond
@@ -13,6 +14,7 @@ import net.devh.boot.grpc.server.service.GrpcService;
 @GrpcService
 public class GrpcServerService extends SimpleGrpc.SimpleImplBase {
     @Override
+    @Secured("ROLE_ADMIN")
     public void sayHello(HelloRequest request, StreamObserver<HelloReply> responseObserver) {
         System.out.println("GrpcServerService...");
         HelloReply reply = HelloReply.newBuilder().setMessage("Hello ==> " + request.getName()).build();
