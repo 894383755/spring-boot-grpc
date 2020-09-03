@@ -56,6 +56,11 @@ public class BaseAuthConfig {
                             Arrays.asList(new SimpleGrantedAuthority("ROLE_GREET"));
                     return new User(username, passwordEncoder.encode(username + "Password"), authorities);
                 }
+                case "admin":{
+                    final List<SimpleGrantedAuthority> authorities =
+                            Arrays.asList(new SimpleGrantedAuthority("ROLE_admin"));
+                    return new User(username, passwordEncoder.encode(username + "Password"), authorities);
+                }
                 default: {
                     throw new UsernameNotFoundException("Could not find user!");
                 }

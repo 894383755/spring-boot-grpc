@@ -19,6 +19,7 @@ public class GrpcClientService {
 
     public String sendMessage(String name) {
         try {
+            System.out.println("开始调用grpc接口");
             HelloReply response = simpleBlockingStub.sayHello(HelloRequest.newBuilder().setName(name).build());
             return response.getMessage();
         } catch (final StatusRuntimeException e) {
