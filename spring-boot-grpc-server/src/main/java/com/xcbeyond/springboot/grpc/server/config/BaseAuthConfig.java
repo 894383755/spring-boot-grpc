@@ -58,7 +58,7 @@ public class BaseAuthConfig {
                 }
                 case "admin":{
                     final List<SimpleGrantedAuthority> authorities =
-                            Arrays.asList(new SimpleGrantedAuthority("ROLE_admin"));
+                            Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN"));
                     return new User(username, passwordEncoder.encode(username + "Password"), authorities);
                 }
                 default: {

@@ -14,7 +14,7 @@ import org.springframework.security.access.annotation.Secured;
 @GrpcService
 public class GrpcServerService extends SimpleGrpc.SimpleImplBase {
     @Override
-    //@Secured("ROLE_ADMIN")
+    @Secured("ROLE_ADMIN")
     public void sayHello(HelloRequest request, StreamObserver<HelloReply> responseObserver) {
         System.out.println("GrpcServerService...");
         HelloReply reply = HelloReply.newBuilder().setMessage("Hello ==> " + request.getName()).build();
