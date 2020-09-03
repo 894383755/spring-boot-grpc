@@ -5,7 +5,7 @@ import net.devh.boot.grpc.client.security.CallCredentialsHelper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class SecurityConfiguration {
 
     private String username = "admin";

@@ -20,5 +20,5 @@ eureka:
       #defaultZone: http://localhost:8761/eureka/
       defaultZone: http://localhost:${server.port}/eureka/
   server:
-    enable-self-preservation: false
+    enable-self-preservation: false #自我检查功能
 

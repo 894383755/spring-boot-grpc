@@ -27,9 +27,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@Configuration
-//@EnableWebSecurity
-@EnableGlobalMethodSecurity(securedEnabled = true,proxyTargetClass = true)
+//@Configuration
+//@EnableGlobalMethodSecurity(securedEnabled = true,proxyTargetClass = true)
 public class BaseAuthConfig {
 /*    @Bean
     AuthenticationManager authenticationManager() {
