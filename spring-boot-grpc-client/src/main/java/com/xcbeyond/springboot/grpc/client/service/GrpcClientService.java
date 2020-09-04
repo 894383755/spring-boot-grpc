@@ -23,7 +23,8 @@ public class GrpcClientService {
             HelloReply response = simpleBlockingStub.sayHello(HelloRequest.newBuilder().setName(name).build());
             return response.getMessage();
         } catch (final StatusRuntimeException e) {
-            return "FAILED with " + e.getStatus().getCode();
+            e.printStackTrace();
+            return "FAILED with " + e.getStatus().getCode() + "\n" + e.getMessage()+ "\n";
         }
     }
 

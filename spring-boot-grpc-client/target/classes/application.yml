@@ -23,3 +23,6 @@ grpc:
       enableKeepAlive: true
       keepAliveWithoutCalls: true
       negotiationType: plaintext
+logging:
+  level:
+    root: debug

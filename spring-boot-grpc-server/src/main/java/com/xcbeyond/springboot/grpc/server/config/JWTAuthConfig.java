@@ -5,6 +5,7 @@ import net.devh.boot.grpc.server.security.authentication.GrpcAuthenticationReade
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.oauth2.jose.jws.JwsAlgorithms;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoderJwkSupport;
 import org.springframework.security.oauth2.server.resource.BearerTokenAuthenticationToken;
@@ -62,6 +63,8 @@ public class JWTAuthConfig {
         // Uses local Keycloak instance running on port 8080 with the realm: TestRealm
         final String endpointURI = "http://localhost:8080/auth/realms/TestRealm/protocol/openid-connect/certs";
         //return NimbusJwtDecoder.withJwkSetUri(endpointURI).build();
-        return new NimbusJwtDecoderJwkSupport(endpointURI);
+        //return NimbusJwtDecoder
+        //return JwtDecoder.formIssuerLocation(endpointURI);
+        return new NimbusJwtDecoderJwkSupport(endpointURI, JwsAlgorithms.HS256);
     }
 }

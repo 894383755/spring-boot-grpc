@@ -1,5 +1,8 @@
 package com.xcbeyond.springboot.grpc.client.controller;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.xcbeyond.springboot.grpc.client.config.JWTSecurityConfiguration;
 import com.xcbeyond.springboot.grpc.client.service.GrpcClientService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -22,14 +25,16 @@ public class GrpcClientController {
     @Resource
     private GrpcClientService grpcClientService;
 
-    @RequestMapping("/hello")
+    @RequestMapping("/")
     public String printMessage(@RequestParam(defaultValue = "jack") String name) {
         return grpcClientService.sendMessage(name);
     }
 
     @RequestMapping("/auth/realms/TestRealm/protocol/openid-connect/certs")
     public String printMessage() {
-        return "hello";
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("keys",JWTSecurityConfiguration.token);
+        return jsonObject.toString();
     }
 
 }
